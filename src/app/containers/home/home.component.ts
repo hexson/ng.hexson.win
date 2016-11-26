@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import marked from 'marked';
+
+import { AppService } from '../../app.service';
 
 import { BASE } from '../../constants/base';
 
@@ -7,6 +10,11 @@ import { BASE } from '../../constants/base';
   templateUrl: './home.component.html'
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   BASE = BASE;
+  constructor(private appService: AppService) {}
+  ngOnInit(): void {
+  	this.appService.getIssue().then(data => console.log(data));
+  	console.log(marked)
+  }
 }

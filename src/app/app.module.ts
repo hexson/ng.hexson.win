@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 
 
+import { AppService } from './app.service';
 import { HomeComponent } from './containers/home';
+import { AllComponent } from './containers/all';
 import { NavBarComponent } from './components/nav-bar.component';
 
 
@@ -20,8 +22,10 @@ import { NavBarComponent } from './components/nav-bar.component';
   declarations: [
     AppComponent,
     HomeComponent,
+    AllComponent,
     NavBarComponent
   ],
+  providers: [ AppService ],
   bootstrap: [ AppComponent ]
 })
 

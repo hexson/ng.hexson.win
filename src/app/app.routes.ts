@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './containers/home';
-// import { AllComponent } from './containers/all';
+import { AllComponent } from './containers/all';
 // import { TagsComponent } from './containers/tags';
 // import { AboutComponent } from './containers/about';
 // import { SearchComponent } from './containers/search';
@@ -14,10 +14,10 @@ export const ROUTES: Routes = [
     component: HomeComponent,
     pathMatch: 'full'
   },
-  // {
-  //   path: 'all',
-  //   component: AllComponent
-  // },
+  {
+    path: 'all',
+    component: AllComponent
+  },
   // {
   //   path: 'tags',
   //   component: TagsComponent

@@ -6,5 +6,11 @@ import '@angular/http';
 import '@angular/router';
 // RxJS
 import 'rxjs';
+// nprogress
+import 'nprogress';
+// marked
+import 'marked';
+// highlight
+import 'highlight.js';
 // css
 import './app/app.component.css';
