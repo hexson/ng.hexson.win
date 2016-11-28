@@ -1,0 +1,10 @@
+<div class="content">
+  <common-header></common-header>
+  <div class="all-con">
+    <loading *ngIf="loadingView"></loading>
+    <reload *ngIf="errorView"></reload>
+    <div class="ac">
+      <single-views *ngFor="let item of issue" [props]="item"></single-views>
+    </div>
+  </div>
+</div>
