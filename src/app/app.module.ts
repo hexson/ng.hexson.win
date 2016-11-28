@@ -10,6 +10,10 @@ import { AppService } from './app.service';
 import { HomeComponent } from './containers/home';
 import { AllComponent } from './containers/all';
 import { NavBarComponent } from './components/nav-bar.component';
+import { CommonHeaderComponent } from './components/common-header.component';
+import { LoadingComponent } from './components/loading.component';
+import { ReloadComponent } from './components/reload.component';
+import { SingleViewsComponent } from './components/single-views.component';
 
 
 
@@ -17,13 +21,17 @@ import { NavBarComponent } from './components/nav-bar.component';
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     AllComponent,
-    NavBarComponent
+    NavBarComponent,
+    CommonHeaderComponent,
+    LoadingComponent,
+    ReloadComponent,
+    SingleViewsComponent
   ],
   providers: [ AppService ],
   bootstrap: [ AppComponent ]

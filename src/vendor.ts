@@ -7,10 +7,10 @@ import '@angular/router';
 // RxJS
 import 'rxjs';
 // nprogress
-import 'nprogress';
+// import 'nprogress';
 // marked
-import 'marked';
+// import 'marked';
 // highlight
-import 'highlight.js';
+// import 'highlight.js';
 // css
 import './app/app.component.css';

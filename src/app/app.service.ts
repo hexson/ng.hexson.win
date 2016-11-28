@@ -7,6 +7,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 
 export class AppService {
+	issue: any[];
 	private issuesUrl = 'json/data_callbak.json';
 
 	private handleError(error: any): Promise<any> {
@@ -19,7 +20,7 @@ export class AppService {
 	getIssue(): Promise<any> {
 		return this.http.get(this.issuesUrl)
 		.toPromise()
-		.then(res => res.json())
+		.then(res => this.issue = res.json())
 		.catch(this.handleError);
-	} 
+	}
 }
