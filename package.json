@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/core-js": "^0.9.34",
     "@types/jasmine": "^2.5.35",
+    "@types/marked": "^0.0.28",
     "@types/node": "^6.0.45",
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
