@@ -4,7 +4,8 @@
     <loading *ngIf="loadingView"></loading>
     <reload *ngIf="errorView"></reload>
     <div class="ac">
-      <single-views *ngFor="let item of issue" [props]="item"></single-views>
+      <single-views *ngFor="let item of issues" [props]="item"></single-views>
+      <button class="{{btnClass}}" (click)="loadBefore()">{{loadBeforeText}}</button>
     </div>
   </div>
 </div>
