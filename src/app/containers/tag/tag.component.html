@@ -1,0 +1,12 @@
+<div class="content">
+  <common-header></common-header>
+  <div class="mt30">
+    <loading *ngIf="loadingView"></loading>
+    <reload *ngIf="errorView"></reload>
+    <div class="ac" *ngIf="tagContent">
+      <p class="ac f18 mb30">- {{tag}} -</p>
+      <single-views *ngFor="let item of issues" [props]="item"></single-views>
+      <button class="{{btnClass}}" (click)="loadBefore()">{{loadBeforeText}}</button>
+    </div>
+  </div>
+</div>
