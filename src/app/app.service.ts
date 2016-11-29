@@ -7,8 +7,10 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 
 export class AppService {
-	issue: any[];
+	issues: any[];
+	labels: any[];
 	private issuesUrl = 'json/data_callbak.json';
+	private labelsUrl = 'json/labels.json';
 
 	private handleError(error: any): Promise<any> {
 		console.error('ajax error:', error);
@@ -17,10 +19,17 @@ export class AppService {
 
 	constructor(private http: Http){}
 
-	getIssue(): Promise<any> {
+	getIssues(): Promise<any[]> {
 		return this.http.get(this.issuesUrl)
 		.toPromise()
-		.then(res => this.issue = res.json())
+		.then(res => this.issues = res.json())
+		.catch(this.handleError);
+	}
+
+	getLabels(): Promise<any[]> {
+		return this.http.get(this.labelsUrl)
+		.toPromise()
+		.then(res => this.labels = res.json())
 		.catch(this.handleError);
 	}
 }
