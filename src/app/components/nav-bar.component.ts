@@ -8,7 +8,7 @@ import { MENU } from '../constants/menu';
 	selector: 'nav-bar',
 	styles: [`
 		.active {
-			color: '#222222'
+			color: #222222
 		}
 	`],
 	template: `
