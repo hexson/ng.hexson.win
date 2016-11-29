@@ -25,6 +25,12 @@ export class TagsComponent implements OnInit, AfterViewInit {
     private appService: AppService
   ) {}
 
+  handle(labels: any[]) {
+    this.labels = labels;
+    this.loadingView = false;
+    this.btnClass = 'load-before block f18';
+  }
+
   gotoTag(tag: string): void {
     this.router.navigate(['/tag', tag]);
   }
@@ -34,16 +40,12 @@ export class TagsComponent implements OnInit, AfterViewInit {
     if (!this.appService.labels){
       this.appService.getLabels()
       .then(data => {
-        this.labels = data;
-        this.loadingView = false;
-        this.btnClass = 'load-before block f18';
+        this.handle(data);
       })
       .catch(msg => this.errorView = true);
     }
     else {
-      this.labels = this.appService.labels;
-      this.loadingView = false;
-      this.btnClass = 'load-before block f18';
+      this.handle(this.appService.labels);
     }
   }
 
