@@ -1,7 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './containers/home';
 import { AllComponent } from './containers/all';
-// import { TagsComponent } from './containers/tags';
+import { TagsComponent } from './containers/tags';
+import { TagComponent } from './containers/tag';
 // import { AboutComponent } from './containers/about';
 // import { SearchComponent } from './containers/search';
 // import { ArticleComponent } from './containers/article';
@@ -18,10 +19,14 @@ export const ROUTES: Routes = [
     path: 'all',
     component: AllComponent
   },
-  // {
-  //   path: 'tags',
-  //   component: TagsComponent
-  // },
+  {
+    path: 'tags',
+    component: TagsComponent,
+  },
+  {
+    path: 'tag/:tag',
+    component: TagComponent,
+  },
   // {
   //   path: 'about',
   //   component: AboutComponent
