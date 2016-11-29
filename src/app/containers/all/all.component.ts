@@ -20,6 +20,12 @@ export class AllComponent implements OnInit, AfterViewInit {
     private appService: AppService
   ) {}
 
+  handle(issues: any[]) {
+    this.issues = issues;
+    this.loadingView = false;
+    this.btnClass = 'load-before block f18';
+  }
+
   loadBefore(): void {
     if (this.loadBeforeText == '加载更早的文章'){
       this.loadBeforeText = '没有更多了';
@@ -34,16 +40,12 @@ export class AllComponent implements OnInit, AfterViewInit {
     if (!this.appService.issues){
       this.appService.getIssues()
       .then(data => {
-        this.issues = data;
-        this.loadingView = false;
-        this.btnClass = 'load-before block f18';
+        this.handle(data);
       })
       .catch(msg => this.errorView = true);
     }
     else {
-      this.issues = this.appService.issues;
-      this.loadingView = false;
-      this.btnClass = 'load-before block f18';
+      this.handle(this.appService.issues);
     }
   }
 
