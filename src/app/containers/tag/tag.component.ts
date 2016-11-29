@@ -38,6 +38,9 @@ export class TagComponent implements OnInit, AfterViewInit, OnChanges {
       }
     }
     this.issues = switchIssues;
+    this.loadingView = false;
+    this.tagContent = true;
+    this.btnClass = 'load-before block f18';
   }
 
   ngOnInit(): void {
@@ -53,18 +56,12 @@ export class TagComponent implements OnInit, AfterViewInit, OnChanges {
       this.appService.getIssues()
       .then(data => {
         this.switch(data);
-        this.loadingView = false;
-        this.tagContent = true;
-        this.btnClass = 'load-before block f18';
 
       })
       .catch(msg => this.errorView = true);
     }
     else {
       this.switch(this.appService.issues);
-      this.loadingView = false;
-      this.tagContent = true;
-      this.btnClass = 'load-before block f18';
     }
   }
 
