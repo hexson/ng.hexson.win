@@ -9,6 +9,8 @@ import { ROUTES } from './app.routes';
 import { AppService } from './app.service';
 import { HomeComponent } from './containers/home';
 import { AllComponent } from './containers/all';
+import { TagsComponent } from './containers/tags';
+import { TagComponent } from './containers/tag';
 import { NavBarComponent } from './components/nav-bar.component';
 import { CommonHeaderComponent } from './components/common-header.component';
 import { LoadingComponent } from './components/loading.component';
@@ -27,6 +29,8 @@ import { SingleViewsComponent } from './components/single-views.component';
     AppComponent,
     HomeComponent,
     AllComponent,
+    TagsComponent,
+    TagComponent,
     NavBarComponent,
     CommonHeaderComponent,
     LoadingComponent,
