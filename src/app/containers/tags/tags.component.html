@@ -1,0 +1,10 @@
+<div class="content">
+  <common-header></common-header>
+  <div class="mt30">
+    <loading *ngIf="loadingView"></loading>
+    <reload *ngIf="errorView"></reload>
+    <div class="ac">
+      <a *ngFor="let v of labels" class="tags-label mb15" href="javascript:;" (click)="gotoTag(v.name)" [style.backgroundColor]="'#'+v.color" [style.color]="HEXTOHSV(v.color)[1] >= 50 || HEXTOHSV(v.color)[2] <= 50 ? '#ffffff' : ''">{{v.name}}</a>
+    </div>
+  </div>
+</div>
