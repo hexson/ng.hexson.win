@@ -1,0 +1,14 @@
+<div class="content">
+  <common-header></common-header>
+  <div class="mt30 pb30">
+    <div class="search">
+      <input class="bbox f18" type="text" placeholder="~ 输入关键字搜索(⊙︿⊙) ~" [(ngModel)]="keyword" (keyup)="search($event)" />
+    </div>
+    <loading *ngIf="loadingView"></loading>
+    <reload *ngIf="errorView"></reload>
+    <div class="ac" *ngIf="issues">
+      <single-views *ngFor="let item of issues" [props]="item"></single-views>
+      <button class="{{btnClass}}" (click)="loadBefore()">{{issues.length ? '没有更多了' : '无搜索结果'}}</button>
+    </div>
+  </div>
+</div>
