@@ -42,6 +42,15 @@ export class TagComponent implements OnInit, AfterViewInit, DoCheck {
     this.btnClass = 'load-before block f18';
   }
 
+  loadBefore(): void {
+    if (this.loadBeforeText == '加载更早的文章'){
+      this.loadBeforeText = '没有更多了';
+    }else if (this.btnClass.indexOf('load-before-animation') < 0){
+      this.btnClass = 'load-before block f18 load-before-animation';
+      setTimeout(() => this.btnClass = 'load-before block f18', 400);
+    }
+  }
+
   ngOnInit(): void {
     NProgress.start();
     this.route.params
