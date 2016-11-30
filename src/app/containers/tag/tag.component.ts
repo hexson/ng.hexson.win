@@ -69,21 +69,21 @@ export class TagComponent implements OnInit, AfterViewInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    this.route.params
-    .switchMap((params: any) => this.tag = params['tag'])
-    .subscribe((tag: any) => { /*console.log(tag)*/ });
-    if (this.appService.issues){
-      let switchIssues: any[] = [];
-      let issues: any[] = this.appService.issues;
-      for (let i = 0; i < issues.length; i++){
-        for (let n = 0; n < issues[i].labels.length; n++){
-          if (issues[i].labels[n].name == this.tag){
-            switchIssues.push(issues[i]);
-          }
-        }
-      }
-      this.issues = switchIssues;
-    }
+    // this.route.params
+    // .switchMap((params: any) => this.tag = params['tag'])
+    // .subscribe((tag: any) => { /*console.log(tag)*/ });
+    // if (this.appService.issues){
+    //   let switchIssues: any[] = [];
+    //   let issues: any[] = this.appService.issues;
+    //   for (let i = 0; i < issues.length; i++){
+    //     for (let n = 0; n < issues[i].labels.length; n++){
+    //       if (issues[i].labels[n].name == this.tag){
+    //         switchIssues.push(issues[i]);
+    //       }
+    //     }
+    //   }
+    //   this.issues = switchIssues;
+    // }
   }
 
   ngAfterViewInit(): void {

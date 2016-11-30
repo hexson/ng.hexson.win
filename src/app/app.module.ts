@@ -11,6 +11,7 @@ import { HomeComponent } from './containers/home';
 import { AllComponent } from './containers/all';
 import { TagsComponent } from './containers/tags';
 import { TagComponent } from './containers/tag';
+import { AboutComponent } from './containers/about';
 import { NavBarComponent } from './components/nav-bar.component';
 import { CommonHeaderComponent } from './components/common-header.component';
 import { LoadingComponent } from './components/loading.component';
@@ -31,6 +32,7 @@ import { SingleViewsComponent } from './components/single-views.component';
     AllComponent,
     TagsComponent,
     TagComponent,
+    AboutComponent,
     NavBarComponent,
     CommonHeaderComponent,
     LoadingComponent,
