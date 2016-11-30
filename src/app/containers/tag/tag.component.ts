@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import 'rxjs/add/operator/switchMap';
@@ -13,7 +13,7 @@ import { HEXTOHSV } from '../../lib/HEXTOHSV.HEXSON';
   templateUrl: './tag.component.html'
 })
 
-export class TagComponent implements OnInit, AfterViewInit, OnChanges {
+export class TagComponent implements OnInit, AfterViewInit, DoCheck {
   tag: string;
   issues: any[];
   loadingView = true;
@@ -29,7 +29,6 @@ export class TagComponent implements OnInit, AfterViewInit, OnChanges {
 
   switch(issues: any[]) {
     let switchIssues: any[] = [];
-    console.log(11);
     for (let i = 0; i < issues.length; i++){
       for (let n = 0; n < issues[i].labels.length; n++){
         if (issues[i].labels[n].name == this.tag){
@@ -44,10 +43,6 @@ export class TagComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.ngOnChanges();
-  }
-
-  ngOnChanges(): void {
     NProgress.start();
     this.route.params
     .switchMap((params: any) => this.tag = params['tag'])
@@ -56,12 +51,29 @@ export class TagComponent implements OnInit, AfterViewInit, OnChanges {
       this.appService.getIssues()
       .then(data => {
         this.switch(data);
-
       })
       .catch(msg => this.errorView = true);
     }
     else {
       this.switch(this.appService.issues);
+    }
+  }
+
+  ngDoCheck(): void {
+    this.route.params
+    .switchMap((params: any) => this.tag = params['tag'])
+    .subscribe((tag: any) => { /*console.log(tag)*/ });
+    if (this.appService.issues){
+      let switchIssues: any[] = [];
+      let issues: any[] = this.appService.issues;
+      for (let i = 0; i < issues.length; i++){
+        for (let n = 0; n < issues[i].labels.length; n++){
+          if (issues[i].labels[n].name == this.tag){
+            switchIssues.push(issues[i]);
+          }
+        }
+      }
+      this.issues = switchIssues;
     }
   }
 
