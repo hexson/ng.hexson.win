@@ -1,0 +1,60 @@
+<div class="content">
+  <common-header></common-header>
+  <div class="mt30">
+    <p class="bbox pt15 pr30 pb15 pl30 bg-color">
+      <b class="f16 ac abt">一个 <del>沉迷</del> 穿插<br />在魔法世界的 <del>大魔王</del> 小萌新...</b>
+    </p>
+    <p class="bbox pt15 pr30 pb15 pl30 mt30 f16 lh30 bg-color">
+      <del>如果你想赞助我</del> 你的支持就是我的动力
+      <br />欢迎打赏一杯咖啡给我
+      <a class="gray f14 ml10" href="javascript:;" (click)="showAlipay()" style="text-decoration: underline;">Alipay</a>
+      <a class="gray f14 ml10" href="javascript:;" (click)="showWeChat()" style="text-decoration: underline;">WeChat</a>
+      <br />商务合作及其他相关联系 Email: <a class="f14" href="mailto:1477546184@qq.com" style="color: #e21d42;">1477546184@qq.com</a>
+      <br /><small class="gray">* 有教学解惑需求也可以联系我 / 开放友链 · 欢迎互链 / 感谢各位的支持</small>
+      <br /><small class="gray">* 打赏请备注才能将你添加到列表并增加打赏友链(如果你有博客相关)</small>
+    </p>
+    <div class="al bbox pt15 pr30 pb15 pl30 mt30 f12 bg-color">
+      <p class="f14 mb10">打赏列表</p>
+      <table width="100%">
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>支付宝/微信</th>
+            <th>姓名</th>
+            <th>金额(¥)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2016-10-28</td>
+            <td>2365***152@qq.com</td>
+            <td>*明月</td>
+            <td>6.66</td>
+          </tr>
+          <tr>
+            <td>2016-11-01</td>
+            <td>s***2@163.com</td>
+            <td>*彬</td>
+            <td>19.50</td>
+          </tr>
+          <tr>
+            <td>2016-11-09</td>
+            <td>36***562@qq.com</td>
+            <td>*方</td>
+            <td>10.60</td>
+          </tr>
+          <tr>
+            <td>2016-11-11</td>
+            <td>196***930@qq.com</td>
+            <td>*伟伟</td>
+            <td>8.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="list-view logs bbox mb30 views mt30 pt15 pr30 pb15 pl30 bg-color" [innerHTML]="logs"></div>
+  </div>
+  <div class="opacity-bg" [ngClass]="{'in': Alipay || WeChat, 'block': bgcover}"></div>
+  <div class="alipay" [ngClass]="{'in': Alipay, 'block': BAlipay}" (click)="showAlipay()"><img src="http://ww3.sinaimg.cn/mw690/005EkSOcgw1f96lrl2zoij30r60r6n27.jpg" /></div>
+  <div class="WeChat" [ngClass]="{'in': WeChat, 'block': BWeChat}" (click)="showWeChat()"><img src="http://ww1.sinaimg.cn/mw690/005EkSOcgw1f96o9nfy0aj30lm0lmq59.jpg" /></div>
+</div>
