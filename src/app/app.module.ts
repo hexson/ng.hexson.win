@@ -4,6 +4,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppService } from './app.service';
@@ -12,6 +13,8 @@ import { AllComponent } from './containers/all';
 import { TagsComponent } from './containers/tags';
 import { TagComponent } from './containers/tag';
 import { AboutComponent } from './containers/about';
+import { SearchComponent } from './containers/search';
+import { QComponent } from './containers/q';
 import { NavBarComponent } from './components/nav-bar.component';
 import { CommonHeaderComponent } from './components/common-header.component';
 import { LoadingComponent } from './components/loading.component';
@@ -24,6 +27,7 @@ import { SingleViewsComponent } from './components/single-views.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   declarations: [
@@ -33,6 +37,8 @@ import { SingleViewsComponent } from './components/single-views.component';
     TagsComponent,
     TagComponent,
     AboutComponent,
+    SearchComponent,
+    QComponent,
     NavBarComponent,
     CommonHeaderComponent,
     LoadingComponent,
