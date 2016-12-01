@@ -15,6 +15,8 @@ import { TagComponent } from './containers/tag';
 import { AboutComponent } from './containers/about';
 import { SearchComponent } from './containers/search';
 import { QComponent } from './containers/q';
+import { ArticleComponent } from './containers/article';
+import { NoContentComponent } from './containers/404';
 import { NavBarComponent } from './components/nav-bar.component';
 import { CommonHeaderComponent } from './components/common-header.component';
 import { LoadingComponent } from './components/loading.component';
@@ -39,6 +41,8 @@ import { SingleViewsComponent } from './components/single-views.component';
     AboutComponent,
     SearchComponent,
     QComponent,
+    ArticleComponent,
+    NoContentComponent,
     NavBarComponent,
     CommonHeaderComponent,
     LoadingComponent,

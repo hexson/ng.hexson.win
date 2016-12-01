@@ -5,7 +5,6 @@ import 'rxjs/add/operator/switchMap';
 
 
 import { AppService } from '../../app.service';
-import { HEXTOHSV } from '../../lib/HEXTOHSV.HEXSON';
 
 
 @Component({

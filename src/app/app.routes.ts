@@ -6,8 +6,8 @@ import { TagComponent } from './containers/tag';
 import { AboutComponent } from './containers/about';
 import { SearchComponent } from './containers/search';
 import { QComponent } from './containers/q';
-// import { ArticleComponent } from './containers/article';
-// import { NoContentComponent } from './containers/404';
+import { ArticleComponent } from './containers/article';
+import { NoContentComponent } from './containers/404';
 
 
 export const ROUTES: Routes = [
@@ -40,12 +40,12 @@ export const ROUTES: Routes = [
     path: 'q/:keyword',
     component: QComponent
   },
-  // {
-  //   path: 'article',
-  //   component: ArticleComponent
-  // },
-  // {
-  //   path: '**',
-  //   component: NoContentComponent
-  // }
+  {
+    path: 'article/:id',
+    component: ArticleComponent
+  },
+  {
+    path: '**',
+    component: NoContentComponent
+  }
 ]

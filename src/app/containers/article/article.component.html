@@ -1,0 +1,22 @@
+<div class="article-pt80" *ngIf="loadingView">
+  <loading></loading>
+</div>
+<div class="article-pt80" *ngIf="errorView">
+  <reload></reload>
+</div>
+<div class="content" *ngIf="data">
+  <common-header></common-header>
+  <div class="list ac mt30">
+    <h3 class="list-title mb15">
+      <a class="black f22" href="javascript:;">{{data.title}}</a>
+    </h3>
+    <div class="mb30">
+      <span class="list-time f12">{{data.created_at.substr(0,10)}}</span>
+      <a *ngFor="let val of data.labels" class="list-tag f12" [style.backgroundColor]="'#'+val.color" [style.color]="HEXTOHSV(val.color)[1] >= 50 || HEXTOHSV(val.color)[2] <= 50 ? '#ffffff' : ''">{{val.name}}</a>
+    </div>
+    <div class="list-view f16 views" [innerHTML]="content"></div>
+  </div>
+  <div id="ds">
+    <div class="ds-thread mb10" [attr.data-thread-key]="data.number" [attr.data-title]="data.title" [attr.data-url]="href"></div>
+  </div>
+</div>
