@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 
 import { HEXTOHSV } from '../lib/HEXTOHSV.HEXSON';
@@ -27,7 +27,23 @@ export class SingleViewsComponent implements OnInit {
 
   preview: string;
 
+  constructor(private doc: ElementRef) {}
+
   ngOnInit(): void {
-    this.preview = marked(this.v.body).substr(0,marked(this.v.body).match(/\n/)['index']);
+    let body = marked(this.v.body);
+    this.preview = /^<pre>/.test(body) ? body.substr(0, body.match(/<\/pre>/)['index']) : body.substr(0, body.match(/\n/)['index']);
+    if (/^<pre>/.test(body)){
+      setTimeout(() => {
+        let pre = this.doc.nativeElement.getElementsByTagName('pre');
+        console.log(this.doc.nativeElement.getElementsByTagName('pre'));
+        let hljs = window['hljs'];
+        for (let i = 0; i < pre.length; i++){
+          let code = pre[i].getElementsByTagName('code');
+          for (let n = 0; n < code.length; n++){
+            hljs.highlightBlock(code[n]);
+          }
+        }
+      }, 1);
+    }
   }
 }
