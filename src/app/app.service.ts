@@ -9,8 +9,8 @@ import 'rxjs/add/operator/toPromise';
 export class AppService {
 	issues: any[];
 	labels: any[];
-	private issuesUrl = 'json/data_callbak.json';
-	private labelsUrl = 'json/labels.json';
+	private issuesUrl = '/json/data_callbak.json';
+	private labelsUrl = '/json/labels.json';
 
 	private handleError(error: any): Promise<any> {
 		console.error('ajax error:', error);
