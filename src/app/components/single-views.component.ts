@@ -35,7 +35,7 @@ export class SingleViewsComponent implements OnInit {
     if (/^<pre>/.test(body)){
       setTimeout(() => {
         let pre = this.doc.nativeElement.getElementsByTagName('pre');
-        console.log(this.doc.nativeElement.getElementsByTagName('pre'));
+        // console.log(this.doc.nativeElement.getElementsByTagName('pre'));
         let hljs = window['hljs'];
         for (let i = 0; i < pre.length; i++){
           let code = pre[i].getElementsByTagName('code');

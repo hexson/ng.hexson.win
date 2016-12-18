@@ -45,7 +45,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     NProgress.start();
-    this.logs = marked('基于 **Angular 2** & **tsc** 技术栈单页博客\r\n\r\n`重构` `ng2` `tsc` `ES6` `webpack`\r\n\r\n持续更新中...\r\n\r\n## 日志\r\n\r\n### v1.0.0\r\n\r\n> 使用 ng2 和 tsc 重构所有模块，开发完成后第一版发布');
+    this.logs = marked('基于 **Angular 2** & **Tsc** 技术栈单页博客\r\n\r\n`重构` `Ng2` `Tsc` `RxJS` `ES6` `webpack`\r\n\r\n持续更新中...\r\n\r\n## 日志\r\n\r\n### v1.0.1\r\n\r\n> 增加 Vue2 版本入口，优化数据流输出\r\n\r\n### v1.0.0\r\n\r\n> 使用 Ng2 和 Tsc 重构所有模块，第一版发布');
   }
 
   ngAfterViewInit(): void {
